@@ -1,0 +1,76 @@
+abcdefghijklmnopqurtuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+1234567890
+
+Ha HaHa
+
+MetaCharacters (Need to be escaped):
+.[{()\^$|?*+
+
+coreyms.com
+
+------------------------------------------------------------------
+
+--\d{3}[-.*]\d{3}[-.*]\d{4}
+321-555-4321
+123.555.1234
+123*555*1234
+123.555.1234
+800.555.1234
+900.555.1234
+
+------------------------------------------------------------------
+
+--M(r|s|rs)\.?\s[A-Z]\w*
+Mr. Schafer
+Mr Smith
+Ms Davis
+Mrs. Robinson
+Mr. T
+
+------------------------------------------------------------------
+
+--[A-Za-z0-9.-]+@[a-zA-Z0-9-]+.(com|edu|net)
+--[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
+CoreyMSchafer@gmail.com
+corey.schafer@university.edu
+corey-321-schafer@my-work.net
+corey-321-schafer@my-work900.net
+
+------------------------------------------------------------------
+
+--https?://(www\.)?(\w+)(\.\w+)
+[https-optional www-domain name-extension]
+https://www.google.com
+http://coreyms.com
+https://youtube.com
+https://www.nasa.gov
+
+Replace above with - Group 1: $1
+G1 
+Group 1: www.
+Group 1: 
+Group 1: 
+Group 1: www.
+
+Replace above with - Group 2: $2
+G2
+Group 2: google
+Group 2: coreyms
+Group 2: youtube
+Group 2: nasa
+
+Replace above with - Group 3: $3
+G3
+Group 3: .com
+Group 3: .com
+Group 3: .com
+Group 3: .gov
+
+Replace above with - $2$3
+google.com
+coreyms.com
+youtube.com
+nasa.gov
+
+------------------------------------------------------------------
